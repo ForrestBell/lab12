@@ -23,10 +23,13 @@ class MyApp:
 		self.myContainer1.pack()
 		
 		self.button1 = Button(self.myContainer1)
-		self.button1.configure(text="Left", background= "green")
+		self.button1.configure(text="Left", background= "white")
 		self.button1.grid(row=0,column=0)
 		
 	        # Add a second button!
+		self.button2 = Button(self.myContainer1)
+		self.button2.configure(text="right", background= "maroon")
+		self.button2.grid(row=0,column=1)
 				
 		
 						
@@ -34,7 +37,14 @@ class MyApp:
 		self.button1.bind("<Button-1>", self.button1Click)
 		# Create the code to bind an action to the second button
 		# Do not change "<Button-1>"
-		 
+		def button1Click(self, event):    ### (3)
+		  if self.button1[move] == "green": ### (4)
+			self.button1["background"] = "yellow"
+		  else:
+			self.button1["background"] = "green"
+	
+	         
+	
 		  
 		# This creates the drawpad - no need to change this 
 		drawpad.pack()
